@@ -1,16 +1,24 @@
 <div class="row container mt-4">
-    <div class="col-3">
-        <h2>Busquedas</h2>
-        <hr>
-        <ul class="list-group">
-            <li class="list-group-item">Buscar pais</li>
-            <li class="list-group-item">By region</li>
-            <li class="list-group-item">By capital</li>
-
-        </ul>
-    </div>
-    <div class="col-9">
-        <h2>Buscar Pais</h2>
-        <hr/>
-    </div>
+  <div class="col-4">
+    <h2>Busquedas</h2>
+    <hr />
+    <ul class="list-group">
+      <li [routerLinkActiveOptions]="{exact: true}" routerLinkActive="active" routerLink="/" class="list-group-item">
+        Search country
+      </li>
+      <li routerLinkActive="active" routerLink="region" class="list-group-item">
+        By region
+      </li>
+      <li
+        routerLinkActive="active"
+        routerLink="capital"
+        class="list-group-item"
+      >
+        By capital
+      </li>
+    </ul>
+  </div>
+  <div class="col-8">
+    <router-outlet></router-outlet>
+  </div>
 </div>
