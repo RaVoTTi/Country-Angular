@@ -1,1 +1,26 @@
-<p>by-capital works!</p>
+<h2>By-capital</h2>
+<hr />
+
+<div class="col">
+  <app-country-input
+    (onDebounce)="debounce($event)"
+    (onEnter)="search($event)"
+    placeHolder='Search Capital...'
+    ></app-country-input>
+</div>
+
+<hr />
+
+<div *ngIf="searchError; else elseTemplate" class="alert alert-danger">
+  Not Found {{ terminoErr }}
+</div>
+
+<div>
+  <ng-template #elseTemplate>
+    <div *ngIf="countries.length > 0" class="row">
+      <div class="col">
+        <app-country-table [countries]="countries"> </app-country-table>
+      </div>
+    </div>
+  </ng-template>
+</div>

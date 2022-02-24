@@ -3,7 +3,7 @@ import { SharedModule } from './shared/shared.module';
 import { CountryModule } from './country/country.module';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import {  HttpClientModule} from "@angular/common/http";
 import { AppComponent } from './app.component';
 
 @NgModule({
@@ -12,9 +12,11 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     CountryModule,
     SharedModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]
